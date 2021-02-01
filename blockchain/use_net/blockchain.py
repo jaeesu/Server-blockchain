@@ -20,6 +20,7 @@ class Blockchain(object):
         self.new_block(previous_hash=1, proof=100)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     # make a new block : first_genesis block  +  proof
     #block : 
@@ -27,6 +28,8 @@ class Blockchain(object):
         #
 =======
 >>>>>>> 1c5716abe89de272fd6432769e9b1bf2abdc0f9f
+=======
+>>>>>>> 8ed9043ca93b319da79b201d4e58f4c8f1d468eb
     def new_block(self, proof, previous_hash=None):
         block = {
             'index':len(self.chain) + 1,
@@ -41,6 +44,7 @@ class Blockchain(object):
         self.chain.append(block)
         return block
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     #add a new transaction into block
     #add transaction into list & return index
@@ -48,6 +52,9 @@ class Blockchain(object):
 =======
 
 >>>>>>> 1c5716abe89de272fd6432769e9b1bf2abdc0f9f
+=======
+
+>>>>>>> 8ed9043ca93b319da79b201d4e58f4c8f1d468eb
     def new_transaction(self, sender, recipient, amount):
         self.current_transactions.append({
             'sender':sender,
@@ -66,6 +73,7 @@ class Blockchain(object):
         block_string = json.dumps(block, sort_keys=True).encode()
         return hashlib.sha256(block_string).hexdigest()
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     #결과값이 첫 4개의 0으로 이루어질 때까지 p'를 찾는 작업 증명과정
     def proof_of_work(self, last_proof) -> int:
@@ -73,11 +81,16 @@ class Blockchain(object):
 
     def proof_of_work(self, last_proof):
 >>>>>>> 1c5716abe89de272fd6432769e9b1bf2abdc0f9f
+=======
+
+    def proof_of_work(self, last_proof):
+>>>>>>> 8ed9043ca93b319da79b201d4e58f4c8f1d468eb
         proof = 0
         while self.valid_proof(last_proof, proof) is False:
             proof += 1
 
         return proof
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     #작업증명 결과값을 검증하는 코드, 앞의 4자리가 0으로 이루어져 있는가. return값은 boolean
@@ -88,6 +101,11 @@ class Blockchain(object):
     @staticmethod
     def valid_proof(last_proof, proof):
 >>>>>>> 1c5716abe89de272fd6432769e9b1bf2abdc0f9f
+=======
+
+    @staticmethod
+    def valid_proof(last_proof, proof):
+>>>>>>> 8ed9043ca93b319da79b201d4e58f4c8f1d468eb
         guess = f'{last_proof}{proof}'.encode()
         guess_hash = hashlib.sha256(guess).hexdigest()
         return guess_hash[:4] == "0000"
