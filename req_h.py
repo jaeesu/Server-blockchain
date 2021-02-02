@@ -14,8 +14,8 @@ url="https://api.github.com/"
 uri = url+"users/jaeesu/repos"
 response = get(uri, headers=HEADER)
 data = response.json()
-print(data)
-'''for i in data:
+
+for i in data:
     print(i['name'])
 
 
@@ -26,5 +26,6 @@ data = response.json()
 
 for i in data:
     #print(i['week'],i['days'])
-    print("week: ",convert_datetime(i['week']), i['days'])'''
+    print("week: ",convert_datetime(i['week']), i['days'])
+    print(type(i['days']))
 
